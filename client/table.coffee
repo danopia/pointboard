@@ -13,7 +13,7 @@ Template.tableView.events
     evt.stopImmediatePropagation()
 
   'click .hand .card': ->
-    Meteor.call 'playCard', Session.get('tableId'), @number
+    Meteor.call 'playCard', Session.get('tableId'), @number, Session.get('name')
 
   'click #home': ->
     Session.set 'tableId', null

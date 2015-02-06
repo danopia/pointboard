@@ -1,5 +1,5 @@
 Meteor.methods
-  playCard: (table, card) ->
+  playCard: (table, card, name) ->
     throw 'wtf' unless @userId
     check table, String
     check card, Number
@@ -7,6 +7,7 @@ Meteor.methods
 
     Tables.update {_id: table, 'users.id': @userId}, $set:
       'users.$.card': card
+      'users.$.name': name
 
     newTable = Tables.findOne table
     if newTable.users.every((user) -> user.card)
