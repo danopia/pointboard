@@ -1,1 +1,29 @@
-/* CSS declarations go here */
+body {
+  background-color: #008000;
+}
+
+.copy {
+  background-color: #eee;
+  padding: 1px 25px 30px;
+  margin: 0 0 10px;
+  border-radius: 5px;
+}
+
+.card {
+  display: inline-block;
+  width: 100px;
+  height: 150px;
+  background: #eee;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin: 0 5px 15px;
+
+  font-size: 80px;
+  text-align: center;
+}
+
+.card.selected {
+  background: #cde;
+  position: relative;
+  top: -25px;
+}

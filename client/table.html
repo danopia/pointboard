@@ -1,11 +1,10 @@
 <template name="tableView">
-  <h2>{{name}} <small>(PIN: {{pin}})</small></h2>
-  <h3>{{users.length}} people</h3>
-  <p>
+  <div class="copy">
+    <h2>{{name}} <small>(PIN: {{pin}})</small></h2>
     <button id="leave">leave</button>
     <button id="home">return to lobby</button>
-  </p>
-  <hr>
+    {{users.length}} people
+  </div>
 
   <ul>
     {{#each users}}
@@ -15,9 +14,9 @@
   <p><button id="wipe">wipe table</button></p>
   <hr>
 
-  <ul class="hand">
+  <div class="hand">
     {{#each hand}}
-      <li>{{number}}</li>
+      <div class="card {{#if isSelected}}selected{{/if}}">{{number}}</div>
     {{/each}}
-  </ul>
+  </div>
 </template>

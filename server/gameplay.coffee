@@ -8,6 +8,14 @@ Meteor.methods
     Tables.update {_id: table, 'users.id': @userId}, $set:
       'users.$.card': card
 
+  revokeCard: (table) ->
+    throw 'wtf' unless @userId
+    check table, String
+    throw 'no table' unless Tables.findOne(_id: table, 'users.id': @userId)
+
+    Tables.update {_id: table, 'users.id': @userId}, $unset:
+      'users.$.card': ''
+
   wipeTable: (tableId) ->
     throw 'wtf' unless @userId
     check tableId, String
