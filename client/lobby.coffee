@@ -17,6 +17,7 @@ Template.lobby.events
       name: $('#name').val()
       pin: $('#pin').val()
       users: [id: Meteor.userId()]
+      exposed: false
     , (err, resp) ->
       if err
         alert err

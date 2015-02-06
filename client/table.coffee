@@ -5,6 +5,8 @@ Template.tableView.helpers
     Template.parentData().users.some (obj) =>
       obj.id is Meteor.userId() and obj.card is @number
 
+  cards: -> @users.filter((obj) -> obj.card)
+
 Template.tableView.events
   'click .hand .selected.card': (evt) ->
     Meteor.call 'revokeCard', Session.get('tableId')

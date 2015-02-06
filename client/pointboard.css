@@ -27,3 +27,7 @@ body {
   position: relative;
   top: -25px;
 }
+
+.surface {
+  height: 200px;
+}

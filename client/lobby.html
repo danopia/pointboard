@@ -1,14 +1,14 @@
 <template name="lobby">
-  <div class="copy">
-    {{#if tables.count}}
+  {{#if tables.count}}
+    <div class="copy">
       <h3>Select a table</h3>
       <ul>
         {{#each tables}}
           <li>{{name}}</li>
         {{/each}}
       </ul>
-    {{/if}}
-  </div>
+    </div>
+  {{/if}}
 
   <div class="copy">
     <h3>Start a new table</h3>

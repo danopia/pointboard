@@ -8,6 +8,10 @@ Meteor.methods
     Tables.update {_id: table, 'users.id': @userId}, $set:
       'users.$.card': card
 
+    newTable = Tables.findOne table
+    if newTable.users.every((user) -> user.card)
+      Tables.update table, $set: exposed: true
+
   revokeCard: (table) ->
     throw 'wtf' unless @userId
     check table, String
@@ -24,3 +28,4 @@ Meteor.methods
 
     Tables.update tableId, $set:
       users: table.users.map((obj) -> id: obj.id)
+      exposed: false

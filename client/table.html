@@ -6,13 +6,16 @@
     {{users.length}} people
   </div>
 
-  <ul>
-    {{#each users}}
-      <li>{{id}}: {{card}}</li>
+  <div class="surface">
+    {{#each cards}}
+      <div class="card">
+        {{#if ../exposed}}
+          {{card}}
+        {{/if}}
+      </div>
     {{/each}}
-  </ul>
+  </div>
   <p><button id="wipe">wipe table</button></p>
-  <hr>
 
   <div class="hand">
     {{#each hand}}
