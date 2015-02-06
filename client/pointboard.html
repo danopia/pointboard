@@ -1,0 +1,19 @@
+<head>
+  <title>pointboard</title>
+</head>
+
+<body>
+  <h1>Welcome to Pointboard!</h1>
+
+  {{> root}}
+</body>
+
+<template name="root">
+  {{#with table}}
+    {{> tableView}}
+  {{/with}}
+
+  {{#unless table}}
+    {{> lobby}}
+  {{/unless}}
+</template>

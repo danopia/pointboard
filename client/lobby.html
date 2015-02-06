@@ -1,0 +1,17 @@
+<template name="lobby">
+  {{#if tables.count}}
+    <h2>Select a table</h2>
+    <ul>
+      {{#each tables}}
+        <li>{{name}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+
+  <h2>Start a new table</h2>
+  <form>
+    <input type="text" id="name" placeholder="Table name..." required>
+    <input type="text" id="pin" placeholder="PIN" size="5" required>
+    <button type="submit">Create</button>
+  </form>
+</template>
