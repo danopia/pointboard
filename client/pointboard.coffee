@@ -6,7 +6,7 @@ Template.root.helpers
 Template.nav.events
   'submit [role=rename]': ->
     Meteor.users.update Meteor.userId(), $set:
-      'profile.name': $('#name').val()
+      'profile.name': $('#nickname').val()
     $('#name').val('')
     false
 
