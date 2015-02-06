@@ -1,2 +1,4 @@
 Template.root.helpers
-  table: -> Tables.findOne Session.get('tableId')
+  table: -> Tables.findOne
+    _id: Session.get('tableId')
+    pin: $exists: true

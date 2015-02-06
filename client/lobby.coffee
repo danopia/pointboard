@@ -7,7 +7,7 @@ Template.lobby.events
       Session.set 'tableId', @_id
     else
       Meteor.call 'joinTable', @_id, prompt('Table PIN?'), (err, resp) =>
-        if err
+        if err or not resp
           alert err
         else
           Session.set 'tableId', @_id

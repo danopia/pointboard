@@ -1,8 +1,23 @@
 <template name="tableView">
   <h2>{{name}} <small>(PIN: {{pin}})</small></h2>
   <h3>{{users.length}} people</h3>
-  <p><button id="leave">leave</button></p>
+  <p>
+    <button id="leave">leave</button>
+    <button id="home">return to lobby</button>
+  </p>
   <hr>
 
+  <ul>
+    {{#each users}}
+      <li>{{id}}: {{card}}</li>
+    {{/each}}
+  </ul>
+  <p><button id="wipe">wipe table</button></p>
+  <hr>
 
+  <ul class="hand">
+    {{#each hand}}
+      <li>{{number}}</li>
+    {{/each}}
+  </ul>
 </template>
