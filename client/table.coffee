@@ -24,3 +24,7 @@ Template.tableView.events
 
   'click #wipe': ->
     Meteor.call 'wipeTable', Session.get('tableId')
+
+  'click #flip': ->
+    if confirm 'Do you want to remove this table from the system?'
+      Tables.remove Session.get('tableId')
